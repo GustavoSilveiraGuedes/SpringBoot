@@ -25,6 +25,10 @@ public class StudentEntity {
     @Column(nullable = false, unique = true)
     private String email;
 
+    @OneToOne
+    @JoinColumn(name = "physical_assessment_id")
+    private PhysicalAssessmentEntity physicalAssessmentId;
+
     @OneToMany(mappedBy = "studentId")
     private Set<WorkoutEntity> workouts = new HashSet<>();
 }
