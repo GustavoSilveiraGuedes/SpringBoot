@@ -25,6 +25,11 @@ public class ExerciseController {
         return new ResponseEntity<>(exerciseService.findAll(), HttpStatus.OK);
     }
 
+    @GetMapping("/group/{muscleGroup}")
+    public ResponseEntity<List<ExerciseEntity>> findAllByMuscleGroup(@PathVariable String muscleGroup){
+        return new ResponseEntity<>(exerciseService.findAllByMuscleGroup(muscleGroup), HttpStatus.OK);
+    }
+
     @PostMapping
     public ResponseEntity<String> save(@Valid @RequestBody ExerciseDto exerciseDto){
         exerciseService.save(exerciseDto);

@@ -27,4 +27,8 @@ public class ExerciseService {
                 .build());
 
     }
+
+    public List<ExerciseEntity> findAllByMuscleGroup(String muscleGroup){
+       return exerciseRepository.findAllByMuscleGroup(muscleGroup);
+    }
 }
